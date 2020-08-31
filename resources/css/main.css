@@ -1,0 +1,69 @@
+@tailwind base;
+
+@tailwind components;
+
+.form-group {
+    @apply py-1 px-2 bg-mirage-600 text-gray-500 border-b-2 border-gray-600;
+}
+
+.form-group:focus-within {
+    @apply text-blue-500 border-blue-500;
+}
+
+.form-control {
+    @apply w-full bg-mirage-600 text-white text-xl;
+}
+
+.form-control:focus {
+    @apply outline-none;
+}
+
+.btn {
+    @apply py-1 px-3 bg-mirage-500 text-blue-500 font-semibold border border-blue-500 rounded-full;
+}
+
+.btn:hover {
+    @apply bg-blue-500 text-mirage-500;
+}
+
+.btn:focus {
+    @apply outline-none shadow-outline;
+}
+
+.btn-lg {
+    @apply py-2 px-4;
+}
+
+.btn-blue {
+    @apply bg-blue-500 text-mirage-500;
+}
+
+.btn-blue:hover {
+    @apply bg-blue-700 text-white;
+}
+
+.btn-red {
+    @apply text-red-500 border-red-500;
+}
+
+.btn-red:hover {
+    @apply bg-red-500 text-mirage-500;
+}
+
+.tab-item {
+    @apply py-3 w-full h-full inline-block text-white font-semibold text-center select-none;
+}
+
+.tab-item:hover {
+    @apply bg-blue-500 bg-opacity-25 text-blue-500;
+}
+
+.tab-item:focus {
+    @apply outline-none shadow-outline;
+}
+
+.tab-item.active {
+    @apply text-blue-500 border-b-2 border-blue-500;
+}
+
+@tailwind utilities;

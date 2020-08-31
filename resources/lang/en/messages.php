@@ -1,0 +1,41 @@
+<?php
+
+return [
+
+    'account_info' => 'Account info',
+    'add_your_email' => 'Add your email',
+    'add_your_name' => 'Add your name',
+    'choose_your_username' => 'Choose your username',
+    'confirm_password' => 'Confirm password',
+    'create_your_account_for' => 'Create your account for',
+    'email' => 'Email',
+    'edit_profile' => 'Edit profile',
+    'explore' => 'Explore',
+    'follow' => 'Follow',
+    'followers' => 'Followers',
+    'following' => 'Following',
+    'home' => 'Home',
+    'joined' => 'Joined',
+    'log_in' => 'Log in',
+    'log_in_to' => 'Log in to',
+    'log_out' => 'Log out',
+    'name' => 'Name',
+    'new_password' => 'New password',
+    'no_followers_yet' => 'No followers yet',
+    'no_following_yet' => 'No following yet',
+    'no_tweets_yet' => 'No tweets yet, sorry!',
+    'nothing_new_is_going_on' => 'Nothing new is going on, sorry!',
+    'password' => 'Password',
+    'people_followed_by' => 'People followed by',
+    'people_following' => 'People following',
+    'profile' => 'Profile',
+    'remember_me' => 'Remember me',
+    'save' => 'Save',
+    'see_whats_happening_in_the_world_right_now' => 'See what’s happening in the world right now',
+    'sign_up' => 'Sign up',
+    'tweet' => 'Tweet',
+    'unfollow' => 'Unfollow',
+    'username' => 'Username',
+    'whats_happening' => 'What’s happening?'
+
+];
