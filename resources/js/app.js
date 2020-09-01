@@ -9,40 +9,42 @@ require("./bootstrap");
 /*********************************
  ****** Nav Menu Open/Close ******
  *********************************/
-const navMenu = document.getElementById('nav-menu');
-const navMenuOpenBtn = document.getElementById('nav-menu-open-btn');
-const navMenuCloseBtn = document.getElementById('nav-menu-close-btn');
-const navMenuHideClass = '-translate-x-full';
-const overlay = document.getElementById('overlay');
-const overlayShowClasses = ['fixed', 'opacity-50'];
+const navMenu = document.getElementById("nav-menu");
+const navMenuOpenBtn = document.getElementById("nav-menu-open-btn");
+const navMenuCloseBtn = document.getElementById("nav-menu-close-btn");
+const navMenuFirstTimeOpenClasses = ["transition-transform", "duration-300"];
+const navMenuHideClass = "-translate-x-full";
+const overlay = document.getElementById("overlay");
+const overlayShowClasses = ["fixed", "opacity-50"];
 
-navMenuOpenBtn.addEventListener('click', () => {
-  openNavMenu();
-  showOverlay();
+navMenuOpenBtn.addEventListener("click", () => {
+    openNavMenu();
+    showOverlay();
 });
 
-navMenuCloseBtn.addEventListener('click', () => {
-  closeNavMenu();
-  hideOverlay();
+navMenuCloseBtn.addEventListener("click", () => {
+    closeNavMenu();
+    hideOverlay();
 });
 
-overlay.addEventListener('click', () => {
-  closeNavMenu();
-  hideOverlay();
+overlay.addEventListener("click", () => {
+    closeNavMenu();
+    hideOverlay();
 });
 
 function openNavMenu() {
-  navMenu.classList.remove(navMenuHideClass);
+    navMenu.classList.add(...navMenuFirstTimeOpenClasses);
+    navMenu.classList.remove(navMenuHideClass);
 }
 
 function showOverlay() {
-  overlay.classList.add(...overlayShowClasses);
+    overlay.classList.add(...overlayShowClasses);
 }
 
 function closeNavMenu() {
-  navMenu.classList.add(navMenuHideClass);
+    navMenu.classList.add(navMenuHideClass);
 }
 
 function hideOverlay() {
-  overlay.classList.remove(...overlayShowClasses);
+    overlay.classList.remove(...overlayShowClasses);
 }

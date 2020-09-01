@@ -115,26 +115,31 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  *********************************/
 
 
-var navMenu = document.getElementById('nav-menu');
-var navMenuOpenBtn = document.getElementById('nav-menu-open-btn');
-var navMenuCloseBtn = document.getElementById('nav-menu-close-btn');
-var navMenuHideClass = '-translate-x-full';
-var overlay = document.getElementById('overlay');
-var overlayShowClasses = ['fixed', 'opacity-50'];
-navMenuOpenBtn.addEventListener('click', function () {
+var navMenu = document.getElementById("nav-menu");
+var navMenuOpenBtn = document.getElementById("nav-menu-open-btn");
+var navMenuCloseBtn = document.getElementById("nav-menu-close-btn");
+var navMenuFirstTimeOpenClasses = ["transition-transform", "duration-300"];
+var navMenuHideClass = "-translate-x-full";
+var overlay = document.getElementById("overlay");
+var overlayShowClasses = ["fixed", "opacity-50"];
+navMenuOpenBtn.addEventListener("click", function () {
   openNavMenu();
   showOverlay();
 });
-navMenuCloseBtn.addEventListener('click', function () {
+navMenuCloseBtn.addEventListener("click", function () {
   closeNavMenu();
   hideOverlay();
 });
-overlay.addEventListener('click', function () {
+overlay.addEventListener("click", function () {
   closeNavMenu();
   hideOverlay();
 });
 
 function openNavMenu() {
+  var _navMenu$classList;
+
+  (_navMenu$classList = navMenu.classList).add.apply(_navMenu$classList, navMenuFirstTimeOpenClasses);
+
   navMenu.classList.remove(navMenuHideClass);
 }
 
