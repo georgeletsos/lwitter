@@ -1,5 +1,5 @@
 <header id="nav-menu"
-    class="md:ml-16 w-64 h-full fixed top-0 left-0 z-50 bg-mirage-500 md:border-l border-r border-gray-600 transition-transform duration-300 transform -translate-x-full md:transform-none">
+    class="md:ml-16 w-64 h-full fixed top-0 left-0 z-50 md:z-10 bg-mirage-500 md:border-l border-r border-gray-600 transition-transform duration-300 transform -translate-x-full md:transform-none">
     <div class="py-2 px-4 md:hidden flex justify-between items-center">
         <h2 class="text-white text-xl font-semibold">{{ __('messages.account_info') }}</h2>
 
