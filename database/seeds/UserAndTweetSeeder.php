@@ -16,9 +16,7 @@ class UserAndTweetSeeder extends Seeder
          ****** Insert my User ******
          ****************************/
         factory('App\User')->create([
-            'name' => 'Lightning',
-            'username' => 'Lightning',
-            'email' => 'lightning@gmail.com',
+            'email' => 'guest@gmail.com',
             'password' => Hash::make('11111111')
         ]);
 
@@ -32,7 +30,7 @@ class UserAndTweetSeeder extends Seeder
         /***************************************************************************************
          ****** Insert 69 more new Users with a random number between 6 and 9 Tweets each ******
          ***************************************************************************************/
-        factory('App\User', 69)->create()->each(function ($user) {
+        factory('App\User', 63)->create()->each(function ($user) {
             factory('App\Tweet', rand(6, 9))->create([
                 'user_id' => $user->id
             ]);
