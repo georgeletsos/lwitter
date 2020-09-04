@@ -5,7 +5,7 @@
     @method('DELETE')
     @endif
 
-    <button class="py-2 px-3 flex items-center bg-mirage-500
+    <button class="py-2 px-3 flex items-center
         {{ $tweet->isDislikedBy(auth()->user()) ? 'text-red-500' : 'text-gray-500' }}
         hover:bg-red-500 hover:bg-opacity-25 hover:text-red-500 focus:outline-none focus:shadow-outline rounded-full"
         type="submit">
