@@ -50,7 +50,7 @@ trait Likeable
 
     /**
      * Remove the given user's dislike on the tweet.
-     * 
+     *
      * @return bool
      */
     public function removeDislike(User $user)
@@ -63,7 +63,7 @@ trait Likeable
 
     /**
      * Remove the given user's like on the tweet.
-     * 
+     *
      * @return bool
      */
     public function removeLike(User $user)
@@ -77,7 +77,7 @@ trait Likeable
     /**
      * Make the tweet be disliked by the given user,
      * after removing the possible like first.
-     * 
+     *
      * @param  User $user
      * @return Dislike
      */
@@ -95,7 +95,7 @@ trait Likeable
     /**
      * Make the tweet be liked by the given user,
      * after removing the possible dislike first.
-     * 
+     *
      * @param  User $user
      * @return Like
      */
@@ -112,7 +112,7 @@ trait Likeable
 
     /**
      * Return whether the tweet is disliked by the user.
-     * 
+     *
      * @param User $user
      * @return bool
      */
@@ -132,7 +132,7 @@ trait Likeable
 
     /**
      * Return whether the tweet is liked by the user.
-     * 
+     *
      * @param User $user
      * @return bool
      */
@@ -152,7 +152,7 @@ trait Likeable
 
     /**
      * Get all the dislikes of the tweet.
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function dislikes()
@@ -162,7 +162,7 @@ trait Likeable
 
     /**
      * Get all the likes of the tweet.
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function likes()

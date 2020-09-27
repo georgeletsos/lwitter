@@ -82,7 +82,11 @@
             <a class="-ml-3 inline-block group focus:outline-none focus:shadow-outline rounded-full"
                 href="{{ route('profile', auth()->user()->username) }}">
                 <div class="py-2 px-3 inline-flex items-center
-                {{ isset($user) && auth()->user()->is($user) && Route::currentRouteName() === 'profile' ? 'text-blue-500' : 'text-white' }}
+                {{ isset($user) &&
+                auth()->user()->is($user) &&
+                Route::currentRouteName() === 'profile'
+                    ? 'text-blue-500'
+                    : 'text-white' }}
                 group-hover:bg-blue-500 group-hover:bg-opacity-25 group-hover:text-blue-500 rounded-full">
                     <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
                         <path

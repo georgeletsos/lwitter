@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('profile.unfollow', $user->username)}}">
+<form method="POST" action="{{ route('profile.unfollow', $user->username) }}">
     @csrf
     @method('DELETE')
 

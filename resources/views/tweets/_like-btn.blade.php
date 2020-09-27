@@ -2,7 +2,7 @@
     @csrf
 
     @if ($tweet->isLikedBy(auth()->user()))
-    @method('DELETE')
+        @method('DELETE')
     @endif
 
     <button class="py-2 px-3 -ml-3 flex items-center

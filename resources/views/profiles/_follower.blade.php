@@ -1,4 +1,4 @@
-<article class="py-3 px-4 flex {{ isset($noBorderTop) ? '' : 'border-t border-gray-600'}}">
+<article class="py-3 px-4 flex {{ isset($noBorderTop) ? '' : 'border-t border-gray-600' }}">
     <div class="flex-shrink-0">
         <a class="inline-block hover:shadow-outline focus:outline-none focus:shadow-outline rounded-full"
             href="{{ route('profile', $user->username) }}">
@@ -16,10 +16,12 @@
         </a>
 
         <div class="ml-4">
-            @if (auth()->user()->isFollowing($user))
-            @include('profiles._unfollow-btn', ['user' => $user])
+            @if (auth()
+        ->user()
+        ->isFollowing($user))
+                @include('profiles._unfollow-btn', ['user' => $user])
             @elseif (!auth()->user()->is($user))
-            @include('profiles._follow-btn', ['user' => $user])
+                @include('profiles._follow-btn', ['user' => $user])
             @endif
         </div>
     </div>

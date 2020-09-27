@@ -31,7 +31,7 @@ class Tweet extends Model
 
     /**
      * Get the user of the tweet.
-     * 
+     *
      * @return \App\User
      */
     public function user()
