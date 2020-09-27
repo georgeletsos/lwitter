@@ -21,17 +21,13 @@
 @endsection
 
 @section('content')
-    <section>
+    <section class="divide-y divide-gray-600">
         @forelse ($followers as $follower)
-            @if ($loop->first)
-                @include('profiles._follower', ['user' => $follower, 'noBorderTop' => true])
-            @else
-                @include('profiles._follower', ['user' => $follower])
-            @endif
+            @include('profiles._follower', ['user' => $follower])
         @empty
-            <p class="py-3 px-4 text-white text-center border-t border-gray-600">{{ __('messages.no_followers_yet') }}</p>
+            <p class="py-3 px-4 text-white text-center">{{ __('messages.no_followers_yet') }}</p>
         @endforelse
-
-        {{ $followers->links() }}
     </section>
+
+    {{ $followers->links() }}
 @endsection

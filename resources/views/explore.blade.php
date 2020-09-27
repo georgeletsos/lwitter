@@ -9,17 +9,13 @@
 @endsection
 
 @section('content')
-    <section>
+    <section class="divide-y divide-gray-600">
         @forelse ($tweets as $tweet)
-            @if ($loop->first)
-                @include('tweets._tweet', ['tweet' => $tweet, 'noBorderTop' => true])
-            @else
-                @include('tweets._tweet', ['tweet' => $tweet])
-            @endif
+            @include('tweets._tweet', ['tweet' => $tweet])
         @empty
-            <p class="py-3 px-4 text-white border-t border-gray-600">{{ __('messages.nothing_new_is_going_on') }}</p>
+            <p class="py-3 px-4 text-white">{{ __('messages.nothing_new_is_going_on') }}</p>
         @endforelse
-
-        {{ $tweets->links() }}
     </section>
+
+    {{ $tweets->links() }}
 @endsection

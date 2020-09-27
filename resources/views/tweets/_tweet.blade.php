@@ -1,4 +1,4 @@
-<article class="py-3 px-4 flex {{ isset($noBorderTop) ? '' : 'border-t border-gray-600' }}">
+<article class="py-3 px-4 flex">
     <div class="flex-shrink-0">
         <a class="inline-block hover:shadow-outline focus:outline-none focus:shadow-outline rounded-full"
             href="{{ route('profile', $tweet->user->username) }}">
