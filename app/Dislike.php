@@ -14,4 +14,14 @@ class Dislike extends Model
     protected $fillable = [
         'user_id', 'tweet_id'
     ];
+
+    /**
+     * Get the user of the dislike.
+     *
+     * @return \App\User
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

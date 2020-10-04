@@ -3,7 +3,9 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
@@ -36,6 +38,70 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Scope a query to include users with name like the given name.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  string  $name
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeOrWhereName($query, $name)
+    {
+        return $query->orWhere('name', 'like', "%$name%");
+    }
+
+    /**
+     * Scope a query to include users with username like the given username.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  string  $username
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeOrWhereUsername($query, $username)
+    {
+        return $query->orWhere('username', 'like', "%$username%");
+    }
+
+    /**
+     * Scope a query to include users with email like the given email.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  string  $email
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeOrWhereEmail($query, $email)
+    {
+        return $query->orWhere('email', 'like', "%$email%");
+    }
+
+    /**
+     * Apply the request filters to the given query.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public static function filterBy(Request $request, Builder $query = NULL)
+    {
+        if (is_null($query)) {
+            $query = self::query();
+        }
+
+        if ($request->filled('name')) {
+            $query->orWhereName($request->query('name'));
+        }
+
+        if ($request->filled('username')) {
+            $query->orWhereUsername($request->query('username'));
+        }
+
+        if ($request->filled('email')) {
+            $query->orWhereEmail($request->query('email'));
+        }
+
+        return $query;
+    }
 
     /**
      * Get a list of tweets of users that the user is NOT following.
