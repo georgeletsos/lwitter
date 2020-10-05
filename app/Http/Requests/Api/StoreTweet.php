@@ -24,11 +24,6 @@ class StoreTweet extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => [
-                'required',
-                'numeric',
-                'exists:users,id'
-            ],
             'body' => [
                 'required',
                 'string',

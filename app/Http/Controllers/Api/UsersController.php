@@ -14,6 +14,17 @@ use Illuminate\Support\Facades\Hash;
 class UsersController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('can:update,user')->only('update');
+        $this->middleware('can:delete,user')->only('destroy');
+    }
+
+    /**
      * Display a listing of the resource with optional filters.
      *
      * @return \Illuminate\Http\Response

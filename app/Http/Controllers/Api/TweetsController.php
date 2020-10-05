@@ -11,6 +11,16 @@ use Illuminate\Http\Request;
 class TweetsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('can:delete,tweet')->only('destroy');
+    }
+
+    /**
      * Display a listing of the resource with optional filters.
      *
      * @return \Illuminate\Http\Response
@@ -30,10 +40,12 @@ class TweetsController extends Controller
     {
         $validated = $request->validated();
 
-        $newTweet = Tweet::create([
-            'user_id' => $validated['user_id'],
-            'body' => $validated['body'],
-        ]);
+        $newTweet = auth()
+            ->user()
+            ->tweets()
+            ->create([
+                'body' => $validated['body'],
+            ]);
 
         return new TweetResource($newTweet);
     }

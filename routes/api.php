@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::namespace('Api')->group(function () {
+Route::middleware('auth:sanctum')->namespace('Api')->group(function () {
     Route::apiResources([
         'users' => 'UsersController',
         'tweets' => 'TweetsController'
